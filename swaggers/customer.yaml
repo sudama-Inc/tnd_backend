@@ -1,0 +1,239 @@
+paths:
+  "/customer/filter":
+    post:
+      tags:
+        - customer
+      summary: filters a regex quey string from customer
+      description: ""
+      operationId: post_customer_filter
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: customer filter request
+          in: body
+          schema:
+            type: object
+            properties:
+              filter:
+                type: object
+                properties:
+                  q:
+                    type: string
+                    description: RegEx query string for searching
+                  fields:
+                    type: array
+                    items:
+                      type: string
+                    description: fields of customer you wish to filter against
+              sort:
+                type: object
+                description: sorted based on match score (tokenization)
+                properties:
+                  sort_column:
+                    type: string
+                    description: column to sort against
+                  sort_direction:
+                    type: string
+                    description: ASC (Ascending) or DESC (Descending)
+              page:
+                type: object
+                properties:
+                  limit:
+                    type: number
+                    description: number objects per page
+                  offset:
+                    type: number
+                    description: offset the number of objects in current page
+      responses:
+        "200":
+          description: successful operation
+          schema:
+            "$ref": "#/postJobResponse"
+        "400":
+          description: Error
+          schema:
+            "$ref": "#/definitions/400Response"
+        "401":
+          description: Error
+          schema:
+            "$ref": "#/definitions/401Response"
+        "500":
+          description: Error
+          schema:
+            "$ref": "#/definitions/500Response"
+      security:
+        - Bearer: []
+  "/customer/fetch_by_id":
+    post:
+      tags:
+        - customer
+      summary: to get customer
+      description: ""
+      operationId: fetch_customer
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: get customer details
+          in: body
+          schema:
+            type: object
+            properties:
+              id:
+                type: number
+                format: integer
+                description: id of customer to which is to be confirmed.
+                required: true
+      responses:
+        "200":
+          description: successful operation
+          schema:
+            "$ref": "#/definitions/200Response"
+        "400":
+          description: Error
+          schema:
+            "$ref": "#/definitions/400Response"
+        "401":
+          description: Error
+          schema:
+            "$ref": "#/definitions/401Response"
+        "500":
+          description: Error
+          schema:
+            "$ref": "#/definitions/500Response"
+      security:
+        - Bearer: []
+  "/customer/create":
+    post:
+      tags:
+        - customer
+      summary: create a customer
+      description: ""
+      operationId: create_customer
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: customer payload
+          in: body
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+                required: true
+              nick_name:
+                type: string
+                required: false
+              age:
+                type: number
+                required: true
+              mobile:
+                type: string
+                required: true
+              address:
+                type: string
+                required: true
+              education:
+                type: string
+                required: true
+              occupation:
+                type: string
+                required: true
+              salary:
+                type: string
+                required: true
+              hobbies:
+                type: string
+                required: true
+      responses:
+        "200":
+          description: successful operation
+          schema:
+            "$ref": "#/postCustomerResponse"
+        "400":
+          description: Error
+          schema:
+            "$ref": "#/definitions/400Response"
+        "401":
+          description: Error
+          schema:
+            "$ref": "#/definitions/401Response"
+        "500":
+          description: Error
+          schema:
+            "$ref": "#/definitions/500Response"
+      security:
+        - Bearer: []
+  "/customer/update":
+    put:
+      tags:
+        - customer
+      summary: update a customer plan
+      operationId: update_customer
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: customer payload
+          in: body
+          schema:
+            type: object
+            properties:
+              id:
+                type: number
+                format: integer
+                description: id of the beat you want to update
+                required: true
+                example: 1
+              name:
+                type: string
+                required: true
+              nick_name:
+                type: string
+                required: false
+              age:
+                type: number
+                required: true
+              mobile:
+                type: string
+                required: true
+              address:
+                type: string
+                required: true
+              education:
+                type: string
+                required: true
+              occupation:
+                type: string
+                required: true
+              salary:
+                type: string
+                required: true
+              hobbies:
+                type: string
+                required: true
+      responses:
+        "200":
+          description: successful operation
+          schema:
+            "$ref": "#/definitions/200Response"
+        "400":
+          description: Error
+          schema:
+            "$ref": "#/definitions/400Response"
+        "401":
+          description: Error
+          schema:
+            "$ref": "#/definitions/401Response"
+        "500":
+          description: Error
+          schema:
+            "$ref": "#/definitions/500Response"
+      security:
+        - Bearer: []

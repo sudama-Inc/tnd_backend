@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "title": "Crete Customer Schema",
+  "required": [
+    "name",
+    "age",
+    "mobile",
+    "address",
+    "education",
+    "occupation",
+    "salary",
+    "hobbies"
+  ],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "nick_name": {
+      "type": "string"
+    },
+    "age": {
+      "type": "number"
+    },
+    "mobile": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "education": {
+      "type": "string"
+    },
+    "occupation": {
+      "type": "string"
+    },
+    "salary": {
+      "type": "number"
+    },
+    "hobbies": {
+      "type": "string"
+    }
+  }
+}

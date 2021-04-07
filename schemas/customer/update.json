@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "title": "Update Bank Schema",
+  "required": ["id"],
+  "properties": {
+    "id": {
+      "type": "number",
+      "minimum": 1
+    },
+    "name": {
+      "type": "string"
+    },
+    "nick_name": {
+      "type": "string"
+    },
+    "age": {
+      "type": "number"
+    },
+    "mobile": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "education": {
+      "type": "string"
+    },
+    "occupation": {
+      "type": "string"
+    },
+    "salary": {
+      "type": "number"
+    },
+    "hobbies": {
+      "type": "string"
+    }
+  }
+}

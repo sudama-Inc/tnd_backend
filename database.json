@@ -1,0 +1,42 @@
+{
+  "dev": {
+    "host": "localhost",
+    "user": "root",
+    "password": "root",
+    "database": "tndbackend",
+    "driver": "mysql",
+    "multipleStatements": true
+  },
+  "prod": {
+    "host": {
+      "ENV": "SQL_DB_HOST"
+    },
+    "database": {
+      "ENV": "SQL_DB_NAME"
+    },
+    "driver": "mysql",
+    "multipleStatements": true,
+    "user": {
+      "ENV": "SQL_DB_USERNAME"
+    },
+    "password": {
+      "ENV": "SQL_DB_PASSWORD"
+    }
+  },
+  "stage": {
+    "host": {
+      "ENV": "SQL_DB_HOST"
+    },
+    "database": {
+      "ENV": "SQL_DB_NAME"
+    },
+    "driver": "mysql",
+    "multipleStatements": true,
+    "user": {
+      "ENV": "SQL_DB_USERNAME"
+    },
+    "password": {
+      "ENV": "SQL_DB_PASSWORD"
+    }
+  }
+}

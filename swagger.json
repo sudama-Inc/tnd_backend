@@ -1,0 +1,235 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is tndbackend api",
+    "version": "1.0.0",
+    "title": "tndbackend Swagger Documentation",
+    "contact": {
+      "email": "1krishna.sudama@gmail.com"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/api/v1",
+  "tags": [
+    {
+      "name": "customer"
+    },
+    {
+      "name": "rippr_Job"
+    }
+  ],
+  "schemes": ["https", "http"],
+  "securityDefinitions": {
+    "Bearer": {
+      "name": "authorization",
+      "in": "header",
+      "type": "apiKey"
+    }
+  },
+  "generatePickListResponse": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean",
+        "default": true
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer"
+          },
+          "rows": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Ripplr_Job"
+            }
+          }
+        }
+      }
+    }
+  },
+  "listJobResponse": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean",
+        "default": true
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer"
+          },
+          "rows": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Ripplr_Job"
+            }
+          }
+        }
+      }
+    }
+  },
+  "postJobResponse": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean",
+        "default": true
+      },
+      "ripplr_job": {
+        "$ref": "#/definitions/Ripplr_Job"
+      }
+    }
+  },
+  "postSchemeResponse": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean",
+        "default": true
+      },
+      "data": {
+        "$ref": "#/definitions/scheme"
+      }
+    }
+  },
+  "postCategoryResponse": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean",
+        "default": true
+      },
+      "data": {
+        "$ref": "#/definitions/category"
+      }
+    }
+  },
+  "successEmailNotifierResponse": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean",
+        "default": true
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "failureEmailNotifierResponse": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean",
+        "default": false
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "successSignedUrlResponse": {
+    "type": "Object",
+    "properties": {
+      "success": {
+        "type": "boolean",
+        "default": false
+      },
+      "data": {
+        "type": "Object",
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "200Response": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean",
+          "default": true
+        },
+        "data": {
+          "type": "object",
+          "description": "data"
+        }
+      }
+    },
+    "401Response": {
+      "type": "object"
+    },
+    "400Response": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean",
+          "default": false
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "500Response": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean",
+          "default": false
+        },
+        "message": {
+          "type": "string",
+          "default": "Something went wrong"
+        }
+      }
+    },
+    "customer": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string",
+          "required": true
+        },
+        "nick_name": {
+          "type": "string",
+          "description": "unique nick_name"
+        },
+        "age": {
+          "type": "number",
+          "required": true
+        },
+        "mobile": {
+          "type": "number",
+          "required": true
+        },
+        "occupation": {
+          "type": "string",
+          "required": true
+        },
+        "education": {
+          "type": "string",
+          "required": true
+        },
+        "hobbies": {
+          "type": "string",
+          "required": true
+        },
+        "salaries": {
+          "type": "string",
+          "required": true
+        }
+      }
+    }
+  }
+}
