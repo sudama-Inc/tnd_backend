@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Think & DO
 
 tndbackend is a service system.
@@ -45,6 +44,5 @@ if everything works fine you will see - "Executing (default): SELECT 1+1 AS resu
 [db-migrate]: https://www.npmjs.com/package/db-migrate
 [sequelize]: https://sequelize.org/
 [gulp]: https://www.npmjs.com/package/gulp
-=======
+
 # think_and_do
->>>>>>> 9b48cf3d96373521bae1087cd9c1dddcb8d6d416
