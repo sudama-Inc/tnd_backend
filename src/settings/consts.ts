@@ -33,53 +33,6 @@ const APP_HOST = getEnv("APP_HOST");
 
 const JOB_BUCKET = getEnv("JOB_BUCKET");
 
-const FILE_JOB_CONFIG = {
-  MASTER_PROCESS: {
-    ORDER_MASTER_PROCESS: {
-      VALID_EXTENSIONS: ["xls", "xlsx"],
-    },
-    COLLECTION_MASTER_PROCESS: {
-      VALID_EXTENSIONS: ["xls", "xlsx"],
-    },
-    PAYMENT_DETAIL_MASTER_PROCESS: {
-      VALID_EXTENSIONS: ["xls", "xlsx"],
-    },
-    PRODUCT_MASTER_PROCESS: {
-      VALID_EXTENSIONS: ["xls", "xlsx"],
-    },
-    PURCHASE_ORDER_MASTER_PROCESS: {
-      VALID_EXTENSIONS: ["xls", "xlsx"],
-    },
-    STORE_MASTER_PROCESS: {
-      VALID_EXTENSIONS: ["xls", "xlsx"],
-    },
-    GRN_MASTER_PROCESS: {
-      VALID_EXTENSIONS: ["xls", "xlsx"],
-    },
-    HSN_MASTER_PROCESS: {
-      VALID_EXTENSIONS: ["xls", "xlsx"],
-    },
-    SCHEME_MASTER_PROCESS: {
-      VALID_EXTENSIONS: ["xls", "xlsx"],
-    },
-    DELIVERY_MASTER_PROCESS: {
-      VALID_EXTENSIONS: ["xls", "xlsx"],
-    },
-    BEAT_MASTER_PROCESS: {
-      VALID_EXTENSIONS: ["xls", "xlsx"],
-    },
-    UOM_MASTER_PROCESS: {
-      VALID_EXTENSIONS: ["xls", "xlsx"],
-    },
-    ORDER_CONFIRMATION_MASTER_PROCESS: {
-      VALID_EXTENSIONS: ["xls", "xlsx"],
-    },
-    VEHICLE_ALLOCATION_MASTER_PROCESS: {
-      VALID_EXTENSIONS: ["xls", "xlsx"],
-    },
-  },
-};
-
 const API_BASE_URL = "/api/v1";
 
 const DEFAULT_EMAIL_SENDER_FROM_FIELD = "1krishna.sudama@gmail.com>";
@@ -104,7 +57,6 @@ export {
   DIALECT,
   JWT,
   APP_PORT,
-  FILE_JOB_CONFIG,
   JOB_BUCKET,
   API_BASE_URL,
   APP_HOST,
